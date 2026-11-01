@@ -1,0 +1,112 @@
+# IP-Adapter depth re-rendering / harmonization server (ip_adapter_env)
+# Pinned to the versions verified working on an NVIDIA A100 (PyTorch 2.5.1 + CUDA 12.1).
+#
+# Usage (from inside image-editing/IP-Adapter/, after copying this file in):
+#   conda env create -f environment.yml
+#   conda activate ip_adapter_env
+#   python depth_rerender.py        # port 5003
+#
+# Requirements: Linux x86_64, NVIDIA GPU, driver supporting CUDA 12.1 or newer.
+name: ip_adapter_env
+channels:
+  - conda-forge
+dependencies:
+  - _openmp_mutex=4.5
+  - bzip2=1.0.8
+  - ca-certificates=2026.7.22
+  - icu=78.3
+  - ld_impl_linux-64=2.46.1
+  - libexpat=2.8.5
+  - libffi=3.7.0
+  - libgcc=16.2.0
+  - libgomp=16.2.0
+  - liblzma=5.8.3
+  - libnsl=2.0.1
+  - libsqlite=3.53.4
+  - libstdcxx=16.2.0
+  - libuuid=2.42.4
+  - libxcrypt=4.4.38
+  - libzlib=1.3.2
+  - ncurses=6.6
+  - openssl=3.6.4
+  - packaging=26.3
+  - pip=26.2.1
+  - python=3.10.21
+  - readline=8.3
+  - setuptools=84.0.0
+  - tk=8.6.13
+  - tzdata=2026c
+  - wheel=0.48.0
+  - zstd=1.5.7
+  - pip:
+      # CUDA 12.1 builds of PyTorch come from the PyTorch download index
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - annotated-doc==0.0.5
+      - anyio==4.15.1
+      - blinker==1.9.0
+      - certifi==2026.7.22
+      - charset-normalizer==3.5.1
+      - click==8.5.0
+      - diffusers==0.22.1
+      - einops==0.8.2
+      - exceptiongroup==1.3.1
+      - filelock==4.0.7
+      - flask==3.1.3
+      - fsspec==2026.9.0
+      - gitdb==4.0.12
+      - gitpython==3.1.62
+      - h11==0.16.0
+      - hf-xet==1.6.0
+      - httpcore==1.0.9
+      - httpcore2==2.13.1
+      - httpx==0.28.1
+      - httpx2==2.13.1
+      - huggingface-hub==0.23.0
+      - idna==3.20
+      - importlib-metadata==9.0.1
+      - itsdangerous==2.2.0
+      - jinja2==3.1.6
+      - markdown-it-py==4.2.0
+      - markupsafe==3.0.3
+      - mdurl==0.1.2
+      - mpmath==1.3.0
+      - networkx==3.4.2
+      - numpy==2.2.6
+      - nvidia-cublas-cu12==12.1.3.1
+      - nvidia-cuda-cupti-cu12==12.1.105
+      - nvidia-cuda-nvrtc-cu12==12.1.105
+      - nvidia-cuda-runtime-cu12==12.1.105
+      - nvidia-cudnn-cu12==9.1.0.70
+      - nvidia-cufft-cu12==11.0.2.54
+      - nvidia-curand-cu12==10.3.2.106
+      - nvidia-cusolver-cu12==11.4.5.107
+      - nvidia-cusparse-cu12==12.1.0.106
+      - nvidia-nccl-cu12==2.21.5
+      - nvidia-nvjitlink-cu12==12.9.86
+      - nvidia-nvtx-cu12==12.1.105
+      - opencv-python==5.0.0.93
+      - pillow==12.3.0
+      - pygments==2.21.0
+      - pyyaml==6.0.3
+      - regex==2026.9.29
+      - requests==2.34.2
+      - rich==15.0.0
+      - safetensors==0.8.0
+      - shellingham==1.5.4
+      - smmap==5.0.3
+      - sympy==1.13.1
+      - tokenizers==0.19.1
+      - tomli==2.4.1
+      - torch==2.5.1+cu121
+      - torchaudio==2.5.1+cu121
+      - torchvision==0.20.1+cu121
+      - tqdm==4.70.1
+      - transformers==4.40.0
+      - triton==3.1.0
+      - truststore==0.10.4
+      - typer==0.27.2
+      - typing-extensions==4.16.0
+      - urllib3==2.8.0
+      - werkzeug==3.1.9
+      - zipp==4.1.0
+      - git+https://github.com/tencent-ailab/IP-Adapter.git@62e4af9d0c1ac7d5f8dd386a0ccf2211346af1a2

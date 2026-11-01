@@ -1,0 +1,176 @@
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --secondary-text: #aaaaaa;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; 
+}
+
+/* Title styles */
+.title-container {
+  position: relative; 
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  padding: 2rem 0; 
+  margin-bottom: 2rem;
+  background-color: #FBFBFF;
+}
+.caret-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+.caret-container svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: currentColor;
+}
+.main-title {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #717171;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+    margin-top: 1rem;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+  padding: 2rem;
+  box-sizing: border-box;
+  padding-bottom: 0px;
+  position: relative; 
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for WebKit browsers */
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+/* Content container adjustments */
+.content-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+
+/* When title disappears */
+.content-expand {
+  margin-top: 0rem;
+  height: auto;
+}
+
+/* Input area specific adjustments */
+.input-area {
+  margin-top: 5rem;
+}
+
+.drag-and-dropped-container {
+  display: flex; 
+  flex-direction: column;
+  position: relative; 
+  width: 100%;
+  flex: 1;
+  min-height: 200px;
+  outline: none;
+}
+
+.drag-and-dropped-container.visible {
+  display: flex; 
+  flex-direction: column;
+  outline: 2px dashed rgba(173, 75, 218, 0.3);
+}
+
+.drag-and-dropped-container.drag-active {
+  outline: 3px dashed #ad4bda;
+  background-color: rgba(173, 75, 218, 0.05);
+}
+
+
+
+/* When the user is hovering directly over the zone */
+.drag-and-dropped-container.drag-active::before {
+  outline: 3px dashed #ad4bda;
+  background-color: rgba(173, 75, 218, 0.1);
+  outline-offset: -10px;
+}
+
+/* Centered text instruction */
+.drag-and-dropped-container.drag-active::after {
+  content: "Drop image to start editing";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ad4bda;
+  pointer-events: none;
+  z-index: 100;
+}
+.drag-and-dropped-container {
+  display: none;
+}
+
+.drag-and-dropped-container.visible {
+  display: flex;
+}
+
+
+.drop-instruction-message {
+  background-color: rgba(173, 75, 218, 0.1);
+  border-left: 4px solid #ad4bda;
+  color: var(--text-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  animation: slideInAndFadeOut 5s ease-in-out forwards;
+}
+
+.drop-instruction-message strong {
+  color: #ad4bda;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInAndFadeOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); visibility: hidden; }
+}

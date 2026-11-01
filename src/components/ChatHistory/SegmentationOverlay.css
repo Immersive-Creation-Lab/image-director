@@ -1,0 +1,42 @@
+/* Loading and Error States */
+.segmentation-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 20px;
+  z-index: 4;
+}
+
+
+.segmentation-error {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  color: white;
+  background: rgba(214, 48, 49, 0.8);
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 4;
+  font-size: 0.9em;
+}
+
+
+/* Segmentation Points - KEEP EXISTING GREEN STYLE */
+.segmentation-point {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #00ff00; /* GREEN */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 3;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  animation: pulse 1.5s infinite;
+}

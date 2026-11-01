@@ -1,0 +1,46 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #e5e5e5;
+  border-radius: 20px;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.send-button {
+background: #717171; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 16px; 
+  font-weight: 600; 
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.send-button:hover {
+  background: #25eb74; 
+  color: #000; 
+  transform: translateY(-1px); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
+}
+
+.send-icon {
+  width: 20px; 
+  height: 20px;
+  fill: white; 
+}

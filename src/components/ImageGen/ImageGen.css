@@ -1,0 +1,68 @@
+.image-gen-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.image-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: white;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain; 
+  display: block;
+}
+
+.image-caption {
+  width: 100%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0 0 12px 12px;
+  border-top: 1px solid #e5e7eb;
+}
+.prompt-text {
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 1.6;
+  padding: 0.75rem 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  width: calc(100% - 2rem); 
+  box-sizing: border-box;
+  word-break: break-word; 
+  white-space: pre-wrap; 
+  overflow: hidden; 
+}
+
+@media (max-width: 640px) {
+  .prompt-text {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.timestamp {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: right;
+}

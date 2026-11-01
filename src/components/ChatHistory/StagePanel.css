@@ -1,0 +1,229 @@
+.stage-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  
+  right: 0; 
+  
+  width: 200px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.stage-panel-header {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+.stage-item.active-stage .stage-thumbnail {
+  border: 3px solid #5b9cf6; 
+  box-shadow: 0 0 12px rgba(91, 156, 246, 0.4);
+  transform: scale(1.02);
+}
+
+.stage-item.active-stage .stage-name {
+  color: #5b9cf6;
+  font-weight: 700;
+}
+
+.stage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stage-confirm-btn {
+  margin-top: 8px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stage-confirm-btn:hover {
+  background-color: #45a049;
+}
+
+.stage-item {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.stage-item:hover .stage-thumbnail {
+  transform: scale(1.05);
+  border-color: #4a90e2;
+}
+
+.stage-thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #e0e0e0;
+  margin-bottom: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-thumbnail.placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.stage-info {
+  font-size: 12px;
+  color: #666;
+}
+
+.stage-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.stage-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.status-icon {
+  font-size: 12px;
+}
+
+.stage-status-completed {
+  color: #28a745;
+}
+
+.stage-status-processing {
+  color: #4a90e2;
+}
+
+.stage-status-pending {
+  color: #999;
+}
+
+.stage-status-failed {
+  color: #dc3545;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scrollbar styling */
+.stage-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.stage-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.stage-panel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.stage-panel::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+
+.stage-controls-footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.stage-controls-footer button {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+/* Save Version button */
+.btn-save {
+  border-color: #ad4bda; 
+  box-shadow: 0 0 10px rgba(173, 75, 218, 0.5);
+  background-color: #ad4bda;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #903fb6;
+}
+
+/* Apply & Finish button */
+.btn-apply {
+  background-color: #5bd55f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  color: white;
+}
+
+.btn-apply:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+}
+
+/* Discard - button*/
+.btn-discard {
+  background-color: #f83737;
+  box-shadow: 0 0 10px rgba(230, 22, 22, 0.2); 
+
+  color: #ffffff;
+  border: 1px solid #eccaca !important;
+}
+
+.btn-discard:hover {
+  background-color: #d63031;
+  border-color: #d63031 !important;
+}

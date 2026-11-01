@@ -1,0 +1,59 @@
+# === Node.js ===
+node_modules/
+.pnp/
+.pnp.js
+
+# === React ===
+/build
+/coverage
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+venv/
+env/
+
+# === Editor/IDE ===
+.vscode/
+.idea/
+
+# === Generated AI Assets ===
+/server/3d_models/
+/server/generated_images/
+/server/segmented_images/
+/server/generated_plys
+/server/refined_images
+/server/detailed_prompts
+/server/canny_inputs
+/server/cannyed
+/server/rerender_inputs_debug
+/server/debug_images/
+/server/sessions/
+# === Environment Variables & Secrets ===
+.env
+.env.*
+server/.env
+server/sa_key.json
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+
+#virtual enviroment 
+server/myenv
+/server/debuggg.png
+/server/debug_output.png
+/server/3d_input.png
+
+# === Study Sessions ===
+/server/sessions/

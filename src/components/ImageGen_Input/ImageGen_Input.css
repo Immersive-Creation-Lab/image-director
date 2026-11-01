@@ -1,0 +1,46 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.chat-history-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
+.input-area {
+  position: sticky;
+  bottom: 0;
+  padding: 16px;
+  background: #FBFBFF;
+  z-index: 2; 
+}
+.generating-indicator {
+  padding: 8px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.chat-container.drag-active {
+  outline: 3px dashed #ad4bda;
+  outline-offset: -10px;
+  background-color: rgba(173, 75, 218, 0.05);
+  transition: all 0.2s ease;
+}
+
+.chat-container.drag-active::after {
+  content: "Drop image to start editing";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #ad4bda;
+  pointer-events: none;
+}
